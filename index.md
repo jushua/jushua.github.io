@@ -54,6 +54,9 @@ m  = m %>%  addLegend("bottomright", colors = c("green","yellow","red","black","
 
 ```
 
+def foo():
+    if not bar:
+        return True
 
 
 
