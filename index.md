@@ -33,7 +33,7 @@ For more details see [GitHub Flavored Markdown](https://guides.github.com/featur
 library(leaflet)
 
 # cargamos data
-df= read.csv(file = "C:/Users/B32652/Desktop/trash/coordenadas4.txt",sep = ",")
+df= read.csv(file = "C:/coordenadas4.txt",sep = ",")
  
 data = df
 data = subset(df,mes == "201807")
