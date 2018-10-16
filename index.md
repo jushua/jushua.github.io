@@ -1,12 +1,11 @@
-## Welcome to GitHub Pages
+## BITACORA R
 
-You can use the [editor on GitHub](https://github.com/jushua/jushua.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Codigo de R [Hell](https://jushua.github.io/).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Librería R para Geolocalización
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Leaflet
 
 ```markdown
 Syntax highlighted code block
@@ -28,10 +27,33 @@ Syntax highlighted code block
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+```markdown
+`
+# install.packages("leaflet")
+library(leaflet)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jushua/jushua.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+# cargamos data
+df= read.csv(file = "C:/Users/B32652/Desktop/trash/coordenadas4.txt",sep = ",")
+ 
+data = df
+data = subset(df,mes == "201807")
 
-### Support or Contact
+# generamos mapa
+# proveedor Stamen.TonerLite, OpenStreetMap.HOT, ... http://leaflet-extras.github.io/leaflet-providers/preview/
+m <- leaflet(data) %>% addProviderTiles(providers$OpenStreetMap.HOT) 
+m  = m %>%   addPolylines(lng = ~lon, lat = ~lat, color = "blue")
+m  = m %>%   addCircles(lng = ~lon, lat = ~lat, color = "red", radius = 50)
+m
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+m <- leaflet(data) %>% addProviderTiles(providers$OpenStreetMap.HOT) 
+m  = m %>%   addCircles(lng = ~lon, lat = ~lat)
+m
+
+# agregar leyenda
+m  = m %>%  addLegend("bottomright", colors = c("green","yellow","red","black","black"), labels = c(5:1),title = "NSE",opacity = 1)
+`
+```
+
+
+
+
