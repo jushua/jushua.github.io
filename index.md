@@ -28,7 +28,7 @@ Syntax highlighted code block
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ```markdown
-`
+
 # install.packages("leaflet")
 library(leaflet)
 
@@ -51,7 +51,7 @@ m
 
 # agregar leyenda
 m  = m %>%  addLegend("bottomright", colors = c("green","yellow","red","black","black"), labels = c(5:1),title = "NSE",opacity = 1)
-`
+
 ```
 
 
